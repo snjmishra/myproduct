@@ -6,12 +6,12 @@ window.onload =  function() {
 
 const getCategories = async () => {
     try {
-      console.log("🔄 Fetching categories...");
+      document.getElementById('loader').style.display = 'block';
   
       // Add timestamp to ensure no caching
       const response = await axios.get(`${apiUrl}/category?timestamp=${new Date().getTime()}`);
       const categories = response.data;
-  
+      document.getElementById('loader').style.display = 'none'; 
       const categoryTableBody = document.getElementById('categoryTableBody');
       categoryTableBody.innerHTML = '';
   
