@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:5000/api';
+const apiUrl = 'https://product-category-498u.onrender.com/api';
 
 // Fetch and display products with pagination
 let currentPage = 1;
