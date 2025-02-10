@@ -14,13 +14,14 @@ window.onload = function() {
   
   const getProducts = async () => {
     try {
-      console.log(`Fetching products for page ${currentPage}...`);
+     document.getElementById('loader').style.display = 'block';
       
       const response = await axios.get(`${apiUrl}/product`, {
         params: { page: currentPage, pageSize }
       });
   
       const products = response.data;
+        document.getElementById('loader').style.display = 'none'; 
       const productTableBody = document.getElementById('productTableBody');
       productTableBody.innerHTML = '';
   
